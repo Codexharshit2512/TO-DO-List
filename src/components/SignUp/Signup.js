@@ -1,0 +1,44 @@
+import React , {useRef} from 'react';
+import { Form , Button , Card, Container } from 'react-bootstrap';
+
+ const Signup=()=> {
+
+    const emailRef = useRef();
+    const PasswordRef = useRef();
+    const PasswordConfirmRef = useRef();
+
+
+    return (
+        <>
+        <Container className="d-flex align-items-center justify-content-center" style={{minHeight:"100vh"}}>
+        <div className="w-100" style={{maxWidth:"400px"}}>
+         <Card>
+             <Card.Body>
+                 <h2 className = "text-center mb-4">Sign Up</h2>
+                 <Form>
+                     <Form.Group id = "email">
+                         <Form.Label>Email</Form.Label>
+                         <Form.Control type="email" ref={emailRef} required/>
+                     </Form.Group>
+                     <Form.Group id = "password">
+                         <Form.Label>Password</Form.Label>
+                         <Form.Control type="password" ref={PasswordRef} required/>
+                     </Form.Group>
+                     <Form.Group id = "password-confirm">
+                         <Form.Label>Password Confirmation</Form.Label>
+                         <Form.Control type="password" ref={PasswordConfirmRef} required/>
+                     </Form.Group>
+                     <Button className="w-100" type="Submit">Sign Up</Button>
+                 </Form>
+             </Card.Body>
+         </Card>
+          <div className="w-100 text-center mt-2">
+                Already have an account? Login  
+            </div> 
+          </div> 
+          </Container>   
+        </>
+    )
+}
+
+export default Signup;
